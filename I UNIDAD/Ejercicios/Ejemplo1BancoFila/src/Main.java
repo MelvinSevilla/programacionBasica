@@ -54,7 +54,7 @@ void main() {
     filaVector.add(0,"Porfirio");
 
 
-// PRACTIQUE
+//   PRACTIQUE
 //    Reporte: Identificar de inmediato al siguiente y al último cliente.
 //    Atención: Ciclo iterativo que atiende uno a uno desde el inicio.
 //    Rezago: Lista dinámica de personas que llegaron tarde para el siguiente día.
