@@ -22,7 +22,11 @@ void main() {
     //variables
     Vector<String> filaVector = new Vector<>(5);
     Scanner teclado = new Scanner(System.in);
-    int ingresando = 1;
+    int ingresando = 0;
+
+    filaVector.add("Melvin");
+    filaVector.add("David");
+    filaVector.add("Lunin");
 
 
     System.out.println(" =========  Ingreso de la lista de Clientes: =========== \n");
@@ -48,7 +52,7 @@ void main() {
     teclado.close();
 
 
-
+/**/
 //    Prioridad: Insertar adultos mayores al inicio de la fila sin borrar el resto.
     System.out.println("Suponga que llega Porfirio, adulto mayor, ingreselo con priodidad;");
     filaVector.add(0,"Porfirio");
@@ -56,7 +60,31 @@ void main() {
 
 //   PRACTIQUE
 //    Reporte: Identificar de inmediato al siguiente y al último cliente.
+    System.out.println("");
+    System.out.println("");
+    System.out.println("El siguiente en pasar a la ventanilla sera:");
+    System.out.println(filaVector.firstElement());
+    System.out.println("");
+    System.out.println("El ultimo en pasar a la ventanilla sera:");
+    System.out.println(filaVector.lastElement());
+
+
+
 //    Atención: Ciclo iterativo que atiende uno a uno desde el inicio.
+
+    System.out.println("\n\n###########Atencion de la ventanilla  1 ###########");
+
+    while (!filaVector.isEmpty()){
+        System.out.println("Por favor pase "+filaVector.get(0)+" a la ventanilla 1 \n");
+        filaVector.remove(0);
+    }
+
+    if (filaVector.isEmpty()){
+        System.out.println("\n########### La fila esta vacia ###########");
+    }
+
+
+
 //    Rezago: Lista dinámica de personas que llegaron tarde para el siguiente día.
 
 
