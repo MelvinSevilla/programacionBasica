@@ -20,7 +20,7 @@ public class Ejemplo3 {
             sumatoriaFinales = sumatoriaFinales + promedio;
             System.out.println((i+1)+". "+calificaciones.get(i).get(0)+": "+calificaciones.get(i).get(3));
         }
-        
+
 
         double promedioclase = sumatoriaFinales/ calificaciones.size();
 //        System.out.println("Notas Finales de los alumnos: \n");
