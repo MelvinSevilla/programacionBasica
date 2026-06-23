@@ -9,7 +9,6 @@ public class Empresa {
 
     // Constructor Vacio
     public Empresa() {
-
     }
 
     // Constructor Con Parametros
@@ -47,7 +46,10 @@ public class Empresa {
 
     // Metodo Personalizado
     public void mostrarInformacion() {
-        System.out.println("Esta es la informacion de la Empresa");
+        System.out.println("Esta es la informacion de la Empresa: "+this.nombre+
+        "\nCantidades de Sucursales: "+this.cantidadSucursales+
+        "\nPosee Contador Privado: "+(this.contadorPrivado ? "Si" : "No" )
+        );
     }
 
 }
