@@ -45,14 +45,14 @@ public class Persona {
 
 
     // metodo personalizado
-    public void mostrarDatosPersona(String tipo) {
+    public void mostrarDatosPersona() {
         // System.out.println("Datos de la persona son: ");
         // System.out.println("DNI: " + dni);
         // System.out.println("Nombre: " + nombre);
         // System.out.println("Edad: " + edad);
         // System.out.println("Sexo: " + sexo);
         
-        System.out.println("\nDatos de "+tipo+": "
+        System.out.println("\nDatos de la persona son: "
         +"\nDNI: "+dni
         +"\nNombre: "+nombre
         +"\nEdad: : "+edad

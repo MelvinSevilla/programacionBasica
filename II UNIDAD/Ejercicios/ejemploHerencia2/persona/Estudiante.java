@@ -13,25 +13,9 @@ public class Estudiante extends Persona {
         this.carrera = carrera;
     }
 
-    public String getNumeroCuenta(){
-        return numeroCuenta;
-    } 
-    
-    public void setNumeroCuenta(String numeroCuenta){
-        this.numeroCuenta = numeroCuenta;
-    }
-    
-    public String getCarrera(){
-        return carrera;
-    }
-
-     public void setCarrera(String carrera){
-        this.carrera = carrera;
-    }
-
     // metodo personalizado para estudiante
     public void mostrarDatosEstudiante(){
-        super.mostrarDatosPersona("Estudiante");
+        super.mostrarDatosPersona();
          System.out.println(
         "Numero Cuenta: "+numeroCuenta
         +"\nCarrera: "+carrera);

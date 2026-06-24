@@ -21,31 +21,9 @@ public void main(String[] args) {
 
     Scanner teclado = new Scanner(System.in);
     System.out.println("###################  Ingrese la Informacion del Estudiante:  ###################");
-    
     System.out.println("DNI:");
     String dni = teclado.nextLine();
-    estudiante1.setDni(dni);        
-        
-    System.out.println("Nombre:");
-    String nombre = teclado.nextLine();
-    estudiante1.setNombre(nombre);
-        
-    System.out.println("Edad:");
-    int edad = teclado.nextInt();
-    teclado.nextLine();
-    estudiante1.setEdad(edad);
-        
-    System.out.println("Sexo:");
-    String sexo = teclado.nextLine();
-    estudiante1.setSexo(sexo);
-        
-    System.out.println("Numero Cuenta:");
-    String nCuenta = teclado.nextLine();
-    estudiante1.setNumeroCuenta(nCuenta);
-    
-    System.out.println("Carrera:");
-    String carrera = teclado.nextLine();
-    estudiante1.setCarrera(carrera);
+    estudiante1.setDni(dni);
 
     teclado.close();
     estudiante1.mostrarDatosEstudiante();
