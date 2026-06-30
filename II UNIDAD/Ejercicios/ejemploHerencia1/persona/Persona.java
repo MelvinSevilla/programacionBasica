@@ -1,6 +1,6 @@
 package persona;
 
-public class Persona {
+public abstract class Persona {
     
     private String dni;
     private String nombre;
@@ -61,7 +61,12 @@ public class Persona {
     }
 
 
+    public abstract void metodoAbstracto();
 
 
+    public void mostrarNada(){
+        System.out.println("Dentro de metodo abstracto estudiante");
+
+    }
 
 }

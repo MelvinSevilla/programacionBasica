@@ -1,6 +1,6 @@
 package persona;
 
-public class Estudiante extends Persona {
+public final class Estudiante extends Persona {
 
     String numeroCuenta;
     String carrera;
@@ -36,5 +36,19 @@ public class Estudiante extends Persona {
         "Numero Cuenta: "+numeroCuenta
         +"\nCarrera: "+carrera);
     }
+
+    public void metodoAbstracto(){
+        System.out.println("Dentro de metodo abstracto estudiante");
+    }
+
+    @Override
+    public void mostrarNada(){
+        System.out.println("Dentro de metodo mostrarNada en clase Estudiante");
+    
+    }
+
+    
+ 
+
     
 }
