@@ -1,24 +1,21 @@
 import java.util.Scanner;
+import java.util.Vector;
 
 import persona.Estudiante;
+import persona.Empleado;
+import persona.Persona;
 
 public void main(String[] args) {
 
-    Estudiante estudiante1 = new Estudiante(
-    "0704199901025", 
-    "Melvin Sevilla",
-    26,
-    "Masculino",
-    "20172500020" ,
-    "Informatica");
 
-    // INgresando Informacion
+    
+    // **************************  Ingresando Informacion -> Desde la consola
     // Estudiante estudiante1 = new Estudiante(
     //     null,null,
     //     0,null,null,null
     // );
 
-
+    // actualizando un objeto
     // estudiante1.setDni("0704199952514");
 
     // Scanner teclado = new Scanner(System.in);
@@ -50,13 +47,19 @@ public void main(String[] args) {
     // estudiante1.setCarrera(carrera);
 
     // teclado.close();
+    // estudiante1.mostrarDatosEstudiante();
+    // ************************** FIN Ingresando Informacion -> Desde la consola
 
 
-
-
-    estudiante1.mostrarDatosEstudiante();
-
-
+    // **************************  Ingresando Informacion -> forma Manual
+    // Inicializando un objeto con informacion
+    // Estudiante estudiante1 = new Estudiante(
+    // "0704199901025", 
+    // "Melvin Sevilla",
+    // 26,
+    // "Masculino",
+    // "20172500020" ,
+    // "Informatica");
 
     // Persona persona = new Persona("121231","Melvin",12,"Masculino");        
     // System.out.println("\nDatos de Persona: "
@@ -64,7 +67,28 @@ public void main(String[] args) {
     // +"\nNombre: "+persona.getNombre()
     // +"\nEdad: : "+persona.getEdad()
     // +"\nSexo: "+persona.getSexo());
+    // **************************  Ingresando Informacion -> forma Manual
         
     
+
+
+    // **************************  Polimorfismo
+
+    Vector<Persona> personasVector = new Vector<Persona>(5);
+
+    personasVector.add(new Estudiante("704199901067", "Melvin",26, 
+    "M", "20172500020" ,"Informatica"));
+
+    personasVector.add(new Empleado("0703195265325", "Henry",52,
+    "M", 10026, "Administrador"));
+
+    personasVector.add(new Empleado("070419995254", "Leonor",39,
+    "F", 10026, "Vendedor"));
+
+    System.out.println(personasVector.get(2).getDni());
+    
+
+    // ************************** FIN Polimorfismo
+
 
 }
