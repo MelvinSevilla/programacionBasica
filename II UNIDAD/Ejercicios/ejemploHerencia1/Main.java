@@ -85,7 +85,58 @@ public void main(String[] args) {
     personasVector.add(new Empleado("070419995254", "Leonor",39,
     "F", 10026, "Vendedor"));
 
-    System.out.println(personasVector.get(2).getDni());
+
+    //  obtencion de un dato en especifico
+    System.out.println( personasVector.get(2).getDni());
+
+
+    // Sumar las edades de todos
+    // Sumar las edades de solo los Estudiantes
+    // Sumar las edades de solo los Empleados
+    // Cuantos estuadiantes y Cuantos empleados hay en el vector
+
+    // Imprimir el siguiente formato
+    // ######### Lista de las Personas ########
+    // 1. Melvin tiene 26 años y estudia Informatica
+    // 2. Henry tiene 52 años y trabaja de Administrador
+    // 3. Leonor tiene 39 años y trabaja de Vendedor
+
+    int sumaEdades = 0;
+    int sumaEdadesEstudiantes = 0;
+    int sumaEdadesEmpleados = 0;
+    int contadorEstudiantes = 0;
+    int contadorEmpleados = 0;
+    int index = 0;
+
+    System.out.println("######### Lista de las Personas ########");
+    for(Persona persona : personasVector){
+        index++;
+        sumaEdades += persona.getEdad();
+        if(persona instanceof Estudiante){
+            System.out.println(index + ". " + persona.getNombre() + " tiene " + persona.getEdad() + 
+            " años y estudia "+ ((Estudiante) persona).getCarrera());
+            sumaEdadesEstudiantes += persona.getEdad(); 
+            contadorEstudiantes++;
+        }
+        if(persona instanceof Empleado){
+              System.out.println(index + ". " + persona.getNombre() + " tiene " + persona.getEdad() + 
+            " años y trabaja de "+ ((Empleado) persona).getCargo());
+            sumaEdadesEmpleados += persona.getEdad();
+            contadorEmpleados++;
+        }
+    }
+    System.out.println("\nSuma de edades de todos: "+sumaEdades);
+    System.out.println("Suma de edades de Estudiantes: "+sumaEdadesEstudiantes);
+    System.out.println("Suma de edades de Empleados: "+sumaEdadesEmpleados);
+    System.out.println("Cantidad de Estudiantes: "+contadorEstudiantes);
+    System.out.println("Cantidad de Empleados: "+contadorEmpleados);
+
+    
+
+
+
+
+
     
 
     // ************************** FIN Polimorfismo
