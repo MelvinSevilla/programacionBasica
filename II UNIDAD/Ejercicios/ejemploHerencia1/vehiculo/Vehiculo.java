@@ -2,7 +2,7 @@ package vehiculo;
 
 public abstract class Vehiculo {
  
-    String nPlaca;
+    private String nPlaca;
     String duenio;
     String marca;
     int anio;

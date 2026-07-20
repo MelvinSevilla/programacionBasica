@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class VehiculoMain {
  
-    public static void main(String[] args) {
+    public static void main() {
 
         Vector<Vehiculo> vehiculos = new Vector<>(5);
         vehiculos.add(new Taxi("HCD 4554", "Erling", "Honda", 2015, 15000));
@@ -49,7 +49,6 @@ public class VehiculoMain {
         System.out.println("\nTotal subsidio para taxistas: " + totalSubsidioTaxi);
         System.out.println("Total subsidio para buses: " + totalSubsidioBus);
         System.out.println("Total subsidio: " + totalSubsidio);
-
     }
 
 }

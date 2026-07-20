@@ -1,6 +1,6 @@
 package vehiculo;
 
-public class Taxi  extends Vehiculo {
+public final class Taxi  extends Vehiculo {
     
     int gasolinaUsada;
 
@@ -21,6 +21,7 @@ public class Taxi  extends Vehiculo {
         return this.gasolinaUsada * (info/100); 
     }
 
+    @Override
     public void mostrarInformacion() {
         super.mostrarInformacion();
         System.out.println("Gasolina usada: " + gasolinaUsada);

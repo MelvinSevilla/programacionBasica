@@ -1,6 +1,6 @@
 package vehiculo;
 
-public class Bus extends Vehiculo {
+public final class Bus extends Vehiculo {
     
     int nViajes;
 
@@ -21,7 +21,8 @@ public class Bus extends Vehiculo {
         return this.nViajes * info; 
     }
     
-   public void mostrarInformacion() {
+    @Override
+    public void mostrarInformacion() {
         super.mostrarInformacion();
         System.out.println("Número de viajes: " + nViajes);
     }
