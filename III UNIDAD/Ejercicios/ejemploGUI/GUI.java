@@ -22,9 +22,9 @@ public class GUI extends JFrame{
     // declaracion de componentes
     private JLabel lbltitulo1,lblProdDisponibles,lblfiltrarCategoria,lblCarrito,lblmetPago,lblDetalle;
     private JComboBox<String> comboCategoria;
-    private JList<String> listaOrigen, listaDestino;
+    private JList<String> listaDisponibles, listaAgregados;
     private JButton btnAgregar;
-    private DefaultListModel<String> modeloCarrito;
+    private DefaultListModel<String> listModelCarrito;
     private JScrollPane scrollOrigen,scrollDestino;
     JCheckBox chkCupon;
     JRadioButton rdbTarjeta,rdbEfectivo;
@@ -66,15 +66,15 @@ public class GUI extends JFrame{
         add(lbltitulo1);
 
         lblProdDisponibles = new JLabel("Productos Disponibles");
-        lblProdDisponibles.setBounds(20,60,206,20);
+        lblProdDisponibles.setBounds(246,60,206,20);
         add(lblProdDisponibles);
 
         lblfiltrarCategoria = new JLabel("Filtrar Categorias");
         lblfiltrarCategoria.setBounds(20,100,206,20);
         add(lblfiltrarCategoria);
 
-        Vector<String> categorias = new Vector<>(List.of("Todas","Refrescos","Lacteos","Churros","Pan"));
-        comboCategoria = new JComboBox<String>(categorias);
+        Vector<String> vectorCategorias = new Vector<>(List.of("Todas","Refrescos","Lacteos","Churros","Pan"));
+        comboCategoria = new JComboBox<String>(vectorCategorias);
         comboCategoria.setBounds(20,130,206,20);
         add(comboCategoria);
 
@@ -85,13 +85,12 @@ public class GUI extends JFrame{
         lblmetPago = new JLabel("Metodo de pago");
         lblmetPago.setBounds(20,210,206,20);
         add(lblmetPago);
-
         
         rdbEfectivo = new JRadioButton("Efectivo",true);
         rdbEfectivo.setBounds(20,240,100,20);
         add(rdbEfectivo);
 
-         rdbTarjeta = new JRadioButton("Tarjeta");
+        rdbTarjeta = new JRadioButton("Tarjeta");
         rdbTarjeta.setBounds(126,240,100,20);
         add(rdbTarjeta);
 
@@ -99,7 +98,6 @@ public class GUI extends JFrame{
         grupoPago.add(rdbEfectivo);
         grupoPago.add(rdbTarjeta);
 
-                // Notas
         lblDetalle = new JLabel("Notas adicionales para el pedido:");
         lblDetalle.setBounds(20, 280, 206, 20);
         add(lblDetalle);
@@ -107,45 +105,41 @@ public class GUI extends JFrame{
         txtNotas.setBounds(20, 310, 206, 20);
         add(txtNotas);
 
-
         // --- BLOQUE 2
-
-        listaOrigen = new JList<>(productosDisponibles);
-        scrollOrigen = new JScrollPane(listaOrigen);
-        scrollOrigen.setBounds(280, 90, 160, 200); // x, y, ancho, alto
+        listaDisponibles = new JList<>(productosDisponibles);
+        scrollOrigen = new JScrollPane(listaDisponibles);
+        scrollOrigen.setBounds(246, 90, 206, 200); 
         add(scrollOrigen);
      
-        btnAgregar = new JButton("Agregar al Carrito >>");
-        btnAgregar.setBounds(280, 310, 160, 35);
-        add(btnAgregar);
- 
-
-    
+        btnAgregar = new JButton("Agregar");
+        btnAgregar.setBounds(246, 310, 206, 20);
+        add(btnAgregar);    
 
         // --- BLOQUE 3
-
         lblCarrito = new JLabel("Productos Añadidos:");
-        lblCarrito.setBounds(480, 60, 150, 20);
+        lblCarrito.setBounds(472, 60, 206, 20);
         add(lblCarrito);
 
-        modeloCarrito = new DefaultListModel<>();
-        listaDestino = new JList<>(modeloCarrito);
-         scrollDestino = new JScrollPane(listaDestino);
-        scrollDestino.setBounds(480, 90, 160, 200);
+        listModelCarrito = new DefaultListModel<>();
+        listaAgregados = new JList<>(listModelCarrito);
+        scrollDestino = new JScrollPane(listaAgregados);
+        scrollDestino.setBounds(472, 90, 206, 200);
         add(scrollDestino);
 
+        JButton btnAbrirModal = new JButton("Abrir Modal");
+        btnAbrirModal.setBounds(472, 310, 206, 20);
+        add(btnAbrirModal);
 
          // --- BLOQUE 4: EVENTOS
-
         btnAgregar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String productoSeleccionado = listaOrigen.getSelectedValue();
+                String productoSeleccionado = listaDisponibles.getSelectedValue();
 
                 if (productoSeleccionado != null) {
 
-                    modeloCarrito.addElement(productoSeleccionado);
+                    listModelCarrito.addElement(productoSeleccionado);
 
                     String categoria = (String) comboCategoria.getSelectedItem();
                     
@@ -182,7 +176,14 @@ public class GUI extends JFrame{
             }
         });
 
-
+        btnAbrirModal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // JFrame GUI = new JFrame();
+                Modal modal = new Modal(GUI.this);
+                modal.setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args) {
